@@ -10,10 +10,10 @@ export default function Home(_props: HomeProps) {
       <HeaderComponent />
       <div className="flex w-full flex-1 flex-col-reverse items-center justify-between gap-4 px-8 md:flex-row md:gap-32 md:px-32">
         <div className="flex flex-1 flex-col gap-8 text-zinc-300">
-          <h1 className="text-4xl font-semibold md:text-5xl">
+          <h1 className="text-4xl font-semibold md:text-5xl 2xl:text-7xl">
             Hi, I'm <span className="text-gradient">João Vitor,</span>
           </h1>
-          <p className="text-justify text-lg text-zinc-400">
+          <p className="text-justify text-lg text-zinc-400 lg:text-xl">
             I'm a software engineer, I love to code and I'm always looking for
             new challenges.
             <br /> I'm passionate about technology and I'm always looking for

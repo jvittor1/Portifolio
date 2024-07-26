@@ -1,8 +1,7 @@
 import SectionTitleComponent from "../components/sectionTitle";
 import secondaryImg from "../assets/secondary-image.svg";
 import ExperienceItemCard from "../components/experienceItemCard";
-import { FaReact } from "react-icons/fa6";
-
+import { experiencesData } from "../data/experiencesData";
 interface AboutProps {}
 export default function About(_props: AboutProps) {
   return (
@@ -14,9 +13,9 @@ export default function About(_props: AboutProps) {
           </div>
 
           <div className="flex flex-1 flex-col items-start gap-8">
-            <SectionTitleComponent name="About" />
+            <SectionTitleComponent title="About" />
 
-            <p className="text-justify text-base font-medium text-zinc-400">
+            <p className="text-justify text-base font-medium text-zinc-300 2xl:text-lg">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
               nulla beatae harum earum reprehenderit assumenda dolore iusto
               aperiam culpa tenetur quidem, placeat, ipsum dolorum dignissimos
@@ -27,22 +26,18 @@ export default function About(_props: AboutProps) {
             </p>
 
             <div className="flex w-full flex-col gap-4">
-              <span className="font-medium text-zinc-400">
+              <span className="font-medium text-zinc-300 2xl:text-lg">
                 Technologies Experiences:{" "}
               </span>
-              <div className="grid grid-cols-3 gap-6 md:grid-cols-4 lg:grid-cols-6">
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
-                <ExperienceItemCard name="React" icon={FaReact} />
+              <div className="grid grid-cols-3 gap-6 md:grid-cols-4 lg:grid-cols-5">
+                {experiencesData.map((experience, index) => (
+                  <ExperienceItemCard
+                    key={index}
+                    name={experience.name}
+                    icon={experience.icon}
+                    color={experience.color}
+                  />
+                ))}
               </div>
             </div>
           </div>

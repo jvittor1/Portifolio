@@ -5,8 +5,8 @@ import "../index.css";
 interface ProjectsProps {}
 export default function Projects(_props: ProjectsProps) {
   return (
-    <div className="mt-14 flex w-full flex-col items-start gap-6 px-8 md:px-32">
-      <SectionTitleComponent name="Projects" />
+    <div className="mt-20 flex w-full flex-col items-start gap-6 px-8 md:px-32">
+      <SectionTitleComponent title="Projects" />
       <div className="projects-container grid w-full grid-cols-1 gap-4 lg:grid-cols-2">
         <ProjectCardComponent
           name="Project 1"

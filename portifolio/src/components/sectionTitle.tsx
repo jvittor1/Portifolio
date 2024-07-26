@@ -1,16 +1,16 @@
 import "../index.css";
 
 interface SectionTitleComponentProps {
-  name: string;
+  title: string;
 }
 export default function SectionTitleComponent(
   props: SectionTitleComponentProps,
 ) {
   return (
     <>
-      <span className="text-gradient text-[28px] font-bold tracking-wide">
+      <span className="text-gradient text-[28px] font-bold tracking-wide 2xl:text-4xl">
         &lt;
-        {props.name}/&gt;
+        {props.title}/&gt;
       </span>
     </>
   );

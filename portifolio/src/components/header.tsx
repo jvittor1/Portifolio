@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../index.css";
 import ResponsiveMenuComponent from "./responsiveMenu";
+import SocialMediaIcons from "./socialMediaIcons";
 
 interface HeaderItemComponentProps {
   href: string;
@@ -39,8 +40,8 @@ export default function HeaderComponent(_props: HeaderComponentProps) {
   }, [selected]);
 
   return (
-    <div className="relative z-0 flex h-16 w-full items-center justify-between bg-transparent px-12 py-5 text-zinc-100">
-      <span className="text-gradient text-xl font-bold uppercase">Logo</span>
+    <div className="relative z-0 flex h-16 w-full items-center justify-between bg-transparent px-8 py-5 text-zinc-100 md:px-12 2xl:text-xl">
+      <SocialMediaIcons />
       <nav className="hidden gap-8 font-semibold md:flex">
         <HeaderItemComponent
           href="/"

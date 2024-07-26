@@ -23,6 +23,10 @@ export default {
       textFillColor: {
         transparent: "transparent",
       },
+
+      // backgroundImage: {
+      //   "image-background": "url('/src/assets/background.png')",
+      // },
     },
   },
   plugins: [],

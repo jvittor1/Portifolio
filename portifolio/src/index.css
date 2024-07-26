@@ -119,3 +119,27 @@
     radial-gradient(at 41% 94%, hsl(284deg 100% 6.52%) 0px, transparent 85%),
     radial-gradient(at 100% 99%, hsl(306deg 100% 17.26%) 0px, transparent 85%);
 }
+
+.icon-container {
+  position: relative;
+}
+
+.icon {
+  transition: transform 0.35s ease-in-out;
+}
+
+.icon-container:hover .icon {
+  animation: scale-down-up 0.35s ease-in-out forwards;
+}
+
+@keyframes scale-down-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}

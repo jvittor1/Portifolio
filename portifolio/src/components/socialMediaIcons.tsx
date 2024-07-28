@@ -28,9 +28,12 @@ interface SocialMediaIconsProps {}
 export default function SocialMediaIcons(_props: SocialMediaIconsProps) {
   return (
     <div className="flex items-center gap-2">
-      <IconComponent Icon={MdEmail} href="mailto:example@example.com" />
-      <IconComponent Icon={FaLinkedin} href="https://www.linkedin.com" />
-      <IconComponent Icon={FaGithub} href="https://www.github.com" />
+      <IconComponent Icon={MdEmail} href="mailto:joaovitorbsilva31@gmail.com" />
+      <IconComponent
+        Icon={FaLinkedin}
+        href="https://www.linkedin.com/in/joão-vitor-batista-385a2431a"
+      />
+      <IconComponent Icon={FaGithub} href="https://github.com/jvittor1" />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer";
 import About from "./pages/about";
 import Contact from "./pages/contact";
@@ -12,6 +14,7 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
+      <ToastContainer theme="dark" autoClose={2500} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { experiencesData } from "../data/experiencesData";
 interface AboutProps {}
 export default function About(_props: AboutProps) {
   return (
-    <section className="flex w-full flex-col px-8 md:px-32">
+    <section id="about" className="flex w-full flex-col px-8 md:px-32">
       <div className="rounded-md border-[2px] border-indigo-700 bg-gradient-to-br from-[#4c33b15c] to-[rgba(74,23,141,0.05)] px-6 py-4 shadow-custom-shadow shadow-violet-800 backdrop-blur-3xl">
         <div className="mt-4 flex w-full flex-col items-center justify-between lg:flex-row">
           <div className="flex flex-1">
@@ -16,13 +16,15 @@ export default function About(_props: AboutProps) {
             <SectionTitleComponent title="About" />
 
             <p className="text-justify text-base font-medium text-zinc-300 2xl:text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
-              nulla beatae harum earum reprehenderit assumenda dolore iusto
-              aperiam culpa tenetur quidem, placeat, ipsum dolorum dignissimos
-              quaerat illum voluptate aut impedit!Lorem Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Nisi nulla nam est amet commodi
-              illum quos. Dolorum, quia similique neque aspernatur velit,
-              necessitatibus nam in asperiores tenetur quidem modi perferendis.
+              My name is João Vitor. I am from Itajubá, Minas Gerais, and I am
+              currently pursuing a degree in Information Systems at the Federal
+              University of Itajubá (UNIFEI). I have always been interested in
+              technology and enjoy learning new tools and methodologies. I
+              believe that technology has the potential to transform lives, and
+              I strive to contribute positively through my work. My goal is to
+              continue evolving as a professional and to apply my knowledge to
+              solve real-world problems, helping to create innovative and
+              efficient solutions.
             </p>
 
             <div className="flex w-full flex-col gap-4">

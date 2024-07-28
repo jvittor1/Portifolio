@@ -4,6 +4,9 @@ import { IoMdPerson } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import "../index.css";
+import Progress from "./progress";
+import { toast } from "react-toastify";
 
 const EmailSchema = z.object({
   name: z.string().min(3, "Name must have at least 3 characters"),
@@ -16,6 +19,7 @@ type EmailFormData = z.infer<typeof EmailSchema>;
 export default function FormsContactComponent() {
   const [isNameFocused, setIsNameFocused] = useState(false);
   const [isEmailFocused, setIsEmailFocused] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -26,21 +30,33 @@ export default function FormsContactComponent() {
 
   const handleFormSubmit = async (data: EmailFormData) => {
     console.log(data);
-
     try {
-      console.log("Data:", data);
-      // const result = await loginService(data);
-      // if (result) {
-      //   setErrorMessage(result);
-      // }
+      setIsLoading(true);
+      const response = await fetch("https://formspree.io/f/xdknedwr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast.success("Email sent successfully.");
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.message);
+      }
     } catch (error) {
-      console.error("Erro ao enviar o formulário:", error);
+      console.error("Error sending email:", error);
+      toast.error("Error sending email.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <form
-      className="flex h-full w-full flex-col justify-center"
+      className="flex h-full w-full flex-col justify-center rounded-md border-[2px] border-indigo-700 bg-gradient-to-br from-[#4c33b15c] to-[rgba(74,23,141,0.05)] px-8 py-4 shadow-custom-shadow shadow-violet-800"
       onSubmit={handleSubmit(handleFormSubmit)}
     >
       <div className="flex flex-col gap-5 text-zinc-200">
@@ -113,9 +129,9 @@ export default function FormsContactComponent() {
         </div>
         <button
           type="submit"
-          className="rounded border-[2px] border-indigo-700 bg-transparent py-4 text-base font-bold text-indigo-700 shadow-custom-shadow shadow-violet-900 transition-all duration-150 ease-in-out hover:bg-indigo-800 hover:text-zinc-200"
+          className="mt-5 flex items-center justify-center rounded border-[2px] border-indigo-700 bg-gradient-to-br from-indigo-900 to-violet-700 py-4 text-base font-bold text-zinc-200 opacity-80 shadow-custom-shadow shadow-violet-900 transition-all duration-150 ease-in-out hover:opacity-100"
         >
-          Send
+          {isLoading ? <Progress /> : "Send"}
         </button>
       </div>
     </form>

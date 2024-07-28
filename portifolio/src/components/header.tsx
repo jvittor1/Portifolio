@@ -14,6 +14,10 @@ export function HeaderItemComponent(props: HeaderItemComponentProps) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     props.onClick();
+    const element = document.getElementById(props.href.substring(1));
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (

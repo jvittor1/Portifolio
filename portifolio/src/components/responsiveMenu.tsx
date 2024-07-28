@@ -35,7 +35,7 @@ export default function ResponsiveMenuComponent() {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: 250, background: "#0a0a0a", height: "100vh" }}
+      sx={{ width: 200, background: "#0a0a0a", height: "100vh" }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}

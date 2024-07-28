@@ -5,7 +5,10 @@ interface ContactProps {}
 
 export default function Contact(_props: ContactProps) {
   return (
-    <div className="mt-20 flex w-full flex-col items-start justify-center gap-8 px-8 py-4 md:px-36">
+    <section
+      id="contact"
+      className="mt-20 flex w-full flex-col items-start justify-center gap-8 px-8 py-4 md:px-36"
+    >
       <SectionTitleComponent title="Contact" />
 
       <div className="flex w-full gap-8">
@@ -16,6 +19,6 @@ export default function Contact(_props: ContactProps) {
           <FormsContactComponent />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

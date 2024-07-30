@@ -22,7 +22,7 @@ export default function ProjectCardComponent(props: ProjectCardComponentProps) {
           href={props.url}
           target="_blank"
         >
-          Ver projeto
+          Check it out
         </a>
       </div>
     </div>

@@ -28,7 +28,7 @@ export default function Home(_props: HomeProps) {
           </p>
 
           <span className="mt-12 flex items-center gap-4 text-xl font-semibold text-zinc-200">
-            Learn More{" "}
+            Know more about me{" "}
             <button
               onClick={() => handleClick("about")}
               className="flex h-8 w-8 items-center justify-center rounded-full border border-zinc-200 text-base transition-all duration-150 ease-in-out hover:border-zinc-950 hover:bg-zinc-200 hover:text-zinc-950"
